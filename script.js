@@ -13,3 +13,15 @@ lockIcon.addEventListener('click', () => {
         passwordInput.type = 'password'
     }
 })
+
+// loading button
+const loginBtn = document.querySelector('.btn')
+const loginForm = document.querySelector('form')
+
+loginForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    loginBtn.textContent = 'Loading...'
+    setTimeout(() => {
+        loginBtn.textContent = 'Login'
+    }, 2000)
+})
