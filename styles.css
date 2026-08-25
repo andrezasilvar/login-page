@@ -63,6 +63,16 @@ body {
 
 }
 
+.input-box small {
+    display: block;
+    text-align: left;
+    font-size: 12px;
+    color: #00674b;
+    margin-top: 4px;
+    padding-left: 20px;
+    
+}
+
 .input-box label {
     position: absolute;
     left: 20px;

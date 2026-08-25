@@ -25,3 +25,15 @@ loginForm.addEventListener('submit', (e) => {
         loginBtn.textContent = 'Login'
     }, 2000)
 })
+
+// password character counter
+const passwordCounter = document.querySelector('#passwordCounter')
+
+passwordInput.addEventListener('input', () => {
+    passwordCounter.textContent = passwordInput.value.length + '/8 caracteres mínimos' 
+    if(passwordInput.value.length < 8){
+        passwordCounter.style.color = '#daffd8'
+    }else {
+        passwordCounter.style.color = '#093025'
+    }
+})
