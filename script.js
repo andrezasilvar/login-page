@@ -30,10 +30,24 @@ loginForm.addEventListener('submit', (e) => {
 const passwordCounter = document.querySelector('#passwordCounter')
 
 passwordInput.addEventListener('input', () => {
-    passwordCounter.textContent = passwordInput.value.length + '/8 caracteres mínimos' 
+    // strong password validation
+    let strengthMess = ''
+
+    if(passwordInput.value !== passwordInput.value.toLowerCase() && /[0-9]/.test(passwordInput.value)){
+        strengthMess = 'Strong password ✓'
+    }else{
+        strengthMess = 'Missing uppercase letter and/or number'
+    }
+
+    // counter + strong validation at the same text
+    passwordCounter.textContent = passwordInput.value.length + '/8 minimum characters' + ' | ' + strengthMess
+
+    // color based on minimum character count
     if(passwordInput.value.length < 8){
         passwordCounter.style.color = '#daffd8'
     }else {
         passwordCounter.style.color = '#093025'
     }
 })
+
+
